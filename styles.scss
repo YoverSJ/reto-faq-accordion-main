@@ -1,0 +1,173 @@
+
+@font-face {
+    font-family: 'Work Sans Bold';
+    src: url('./assets/fonts/static/WorkSans-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'Work Sans Regular';
+    src: url('./assets/fonts/static/WorkSans-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Work Sans SemiBold';
+    src: url('./assets/fonts/static/WorkSans-SemiBold.ttf');
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*.contenedor {
+    width: 100vw;
+    height: 100vh;
+}*/
+
+.fondo-morado {
+    width: 100%;
+    height: 30%;
+    background-image: url('./assets/images/background-pattern-mobile.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.fondo-rosado {
+    width: 100vw;
+    height: 70vh;
+    background-color: #F9EEFF;
+    position: absolute;
+    top: 30vh;
+    left: 0;
+    color: black;
+}
+
+.faqs {
+    position: absolute;
+    background-color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 350px;
+    padding: 25px 25px 0 25px;
+    border-radius: 10px;
+
+    .faqs-cabezera {
+        display: flex;
+        align-items: center;
+        //margin-bottom: 1.8rem;
+        //border: 1px solid black;
+
+        .faqs-titulo {
+            font-family: 'Work Sans Bold', sans-serif;
+            font-size: 2.5rem;
+        }
+
+        .logo-star {
+            width: 25px;
+            margin-right: 2rem;
+        }
+    }
+}
+
+.acordeon {
+
+    .contenedor-acordeon {
+        position: relative;
+        //margin: 10px 10px;
+
+        &.activa .contenido-acordeon{
+            height: 100px;
+            margin-bottom: 1rem;
+        }
+
+        &.activa .titulo-acordeon::before {
+            content: url('./assets/images/icon-minus.svg');
+            font-size: 30px;
+        }
+    }
+
+    .titulo-acordeon {
+        font-family: 'Work Sans SemiBold', sans-serif;
+        position: relative;
+        margin: 28px 0;
+        font-size: 1.2rem;
+        cursor: pointer;
+
+        p {
+            font-size: 1.1rem;
+            width: 70%;
+        }
+    }
+
+    .titulo-acordeon::before {
+        content: url('./assets/images/icon-plus.svg');
+        color: black;
+        position: absolute;
+        top: 50%;
+        right: -5px;
+        font-size: 30px;
+        transform: translateY(-50%);
+    }
+
+    .contenido-acordeon {
+        position: relative;
+        font-family: 'Work Sans Regular', sans-serif;
+        color: gray;
+        height: 0;
+        font-size: 1rem;
+        min-width: 350px;
+        overflow: hidden;
+        transition: 0.5s;
+    }
+
+    hr {
+        border: 1px solid rgba(230, 220, 220, 0.35);
+    }
+
+}
+
+.attribution {
+    position: absolute;
+    background-color: #F9EEFF;
+    padding-bottom: 15px;
+    bottom: 0;
+    width: 100%;
+}
+
+
+@media screen and (min-width: 768px) {
+
+    .fondo-morado {
+        background-image: url('./assets/images/background-pattern-desktop.svg');
+    }
+    
+    .faqs {
+        width: 580px;
+        padding: 40px 40px 10px 40px;
+    }
+
+    .acordeon {
+
+        .contenedor-acordeon {
+
+            &.activa .contenido-acordeon{
+                margin-bottom: 0;
+            }
+    
+        }
+
+        .titulo-acordeon {
+            
+            p {
+                width: 100%;
+            }
+        }
+    }
+    
+}
